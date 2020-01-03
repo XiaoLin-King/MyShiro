@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yjx.MyShiro.dao.UserDao">
+
+    <select id="login" parameterType="String" resultType="User">
+      select * from `user` where username=#{username}
+  </select>
+    <!--
+        <select id="queryRoleByUserNmae" resultType="String" parameterType="String">
+            SELECT r.role_name FROM user u join user_role ur
+            ON u.id=ur.u_id JOIN role r
+            on ur.r_id=r.id
+            WHERE u.username=#{username}
+        </select>
+
+        <select id="queryPermissionByRoleName" parameterType="String" resultType="String">
+            SELECT p.permission_name FROM role r JOIN role_permission rpe
+            ON r.id=rpe.r_id JOIN permission p
+            ON rpe.p_id=p.id
+            WHERE r.role_name=#{roleName}
+        </select>
+
+        <delete id="deleteUserById" parameterType="String">
+            delete from user where id=#{id}
+        </delete>
+      -->
+</mapper>
